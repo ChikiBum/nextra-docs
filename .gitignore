@@ -2,5 +2,6 @@
 node_modules
 out/
 pages/description/
+pages/demo/
 components/fullSreenImage/
 pnpm-lock.yaml
