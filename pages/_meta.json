@@ -1,0 +1,33 @@
+{
+  "index": "Introduction",
+  "demo-one-page": "Formats Demo one page",
+  "demo": "Formats Demo",
+  "--": {
+    "type": "separator"
+  },
+  "description": "Display Formats",
+  "-": {
+    "type": "separator"
+  },
+  "description-video": "Video Formats",
+  "-": {
+    "type": "separator"
+  },
+  "configs": "Configs Examples",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "---": {
+    "type": "separator"
+  },
+  "formatting-examples": {
+    "display": "hidden"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://bidmatic.io/sellers.json",
+    "newWindow": true
+  }
+}

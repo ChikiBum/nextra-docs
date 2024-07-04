@@ -1,0 +1,75 @@
+import Link from "next/link";
+
+# AutoInsert config
+
+```js filename="AutoInsert config example" copy
+<script>
+  window.vpb = 
+  {"autoInsert":
+    [
+      {
+        "debug": true,
+        "unitId": 57854,
+        "selector": "body main article:not(.uk-comment):not(:has(nav))",
+        "when": "symbols",
+        "allowUrlRegexp": ".*/person|box_article|news|article|interview|gossip|review|serials/.*",
+        "blockUrlRegexp": ".*/film/.*",
+        "lookupDepth": 2,
+        "whenValue": 1000,
+        "insertValue": 500,
+        "repeat": true,
+        "repeatInsert": 1500,
+        "watch": false,
+        "className": "bdmAd",
+        "sizes": [
+            [
+                200,
+                200
+            ],
+            [
+                250,
+                250
+            ],
+            [
+                300,
+                75
+            ],
+            [
+                300,
+                100
+            ]
+        ],
+    "envs": "d",
+    "envExt": [
+        {
+            "sizes": [
+                [
+                    320,
+                    100
+                ],
+                [
+                    200,
+                    200
+                ]
+            ],
+            "envs": "m,t"
+        }
+    ],
+    "insertBefore": "",
+    "insertAfter": "",
+    "insertAllowSelectorsList": "body, header, main, aside, footer, article, section, div, ol, ul, p",
+    "insertBlockSelectorsList": "",
+    "skipCountSelectorsList": "",
+    "countInvisibleElements": false,
+    "restrictInsertionProximity": {
+        "enabled": true,
+        "selectors": "img,a",
+        "distance": 1
+    }
+  }
+    ]
+  }
+</script>
+```
+
+Click <Link href="/description/autoInsert">`here`</Link> to read about _Autoinsert_.

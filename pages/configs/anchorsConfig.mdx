@@ -1,0 +1,42 @@
+import Link from "next/link";
+
+# Anchors config
+
+```js filename="Anchors config example" copy
+<script>
+    window.vpb=window.vpb||{};
+    window.vpb.anchors=
+        [
+            {
+                "unitId":59153,
+                "closeButtonTemplate":2,
+                "containerPadding":4,
+                "closeButtonPosition":"right",
+                "hideOnScrollBack": true,
+                "ignoreRootPage":true,
+                "scrollValue":100,
+                "withPadding":false,
+                "type":"top",
+		            "sizeMap":[
+                [[700],null],
+                [[468,510],[[320,165],[300,165],[468,60],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                [[468],[[468,60],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                [[300,510],[[320,165],[300,165],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                [[300],[[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                [[0],[[300,100],[320,100],"fluid"]]
+              ]
+            }
+        ]
+</script>
+```
+
+When _"type":"top"_ use _"closeButtonPosition":"right"_.  
+When _"type":"bottom"_ use _"closeButtonPosition":"left"_.
+
+Click <Link href="/description/anchors">`here`</Link> to read about _Anchors_ mapping.
+
+Click <Link href="/description/sizeMap">`here`</Link> to read about _size mapping_.
+
+## Custom parameters
+
+_jumpWhenIndirect_ : 1 - implementation for rbc, for direct advertising the top anchor, otherwise the bottom

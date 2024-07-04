@@ -1,0 +1,36 @@
+import StyledButton from "../components/styledButton/styledButton.tsx";
+import Image from "next/image";
+import img4_2 from "../images/anchors/4_2.jpg";
+
+# h1 title 
+
+## 1. h2 title 
+
+### 1.1. h3 title 
+
+
+
+`Example1`  
+_Example2_
+
+<StyledButton message="sizeMap config">
+  ```js filename="sizeMap example"  {4} copy
+  <script>
+    "sizeMap": [ [[700],null],
+    [[468,510],[[320,165],[300,165],[468,60],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+    [[468],[[468,60],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+    [[300,510],[[320,165],[300,165],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+    [[300],[[320,100],[320,50],[300,100],[300,50],"fluid"]],
+    [[0],[[300,100],[320,100],"fluid"]] ]
+  </script>
+  ```
+  </StyledButton> 
+
+  <StyledButton message="image">
+  <Image src={img4_2} alt="img4_2" width={800} height={500} />
+</StyledButton>
+
+List: 
+- List1
+- List2
+- List3

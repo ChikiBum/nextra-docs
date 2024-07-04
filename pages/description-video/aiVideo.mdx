@@ -1,0 +1,97 @@
+import Link from "next/link";
+import Image from "next/image";
+import StyledButton from "../../components/styledButton/styledButton.tsx";
+
+import img1 from "../../images/aiVideo/old/1_createSite.jpg";
+import img2 from "../../images/aiVideo/old/2_siteParameters.jpg";
+import img3 from "../../images/aiVideo/old/3_createArticle.jpg";
+import img4 from "../../images/aiVideo/old/4_articleParams.jpg";
+import img4_2 from "../../images/aiVideo/old/4_articleParams_2.jpg";
+import img5 from "../../images/aiVideo/old/5_videoDone.jpg";
+import img6 from "../../images/aiVideo/old/6_articleResults.jpg";
+import img6_2 from "../../images/aiVideo/old/6_articleResults_2.jpg";
+import img7 from "../../images/aiVideo/old/7_editAtricle.jpg";
+import img7_2 from "../../images/aiVideo/old/7_editAtricle_2.jpg";
+
+# AI video 
+AI video це функціональність із використанням штучного інтеллекту для генерування відео із текста взятого із статті 
+
+
+## 1. Додовання сайту
+- авторизуватись в адмінку 
+- перейти до разділу "_Ai Video_"
+- по дефолту відкривається "Sites", якщо інше то перейти до "Sites"
+- натиснути кнопку "Create"
+- заповнити всі необхідні поля. Обовязкові поля помічени зірочкою `*` . 
+
+_Owner_ - це  
+_Site_ - це  
+_Is test Site:_ - це  
+_Article CSS Selector:_ - це  
+_Selectors to Skip:_ - це  
+_Text Selector:_ - це  
+_Image Selector:_ - це  
+_Logo preview:_  - це  
+_Source ID_ - це  
+_Player ID_ - це  
+_Add InterScenes with Animated Logo:_ - це  
+_Active Templates:_  - це  
+
+      
+<StyledButton message="image">
+  <Image src={img1} alt="create site" width={800} height={500} />
+  ---
+  <Image src={img2} alt="site parameters " width={800} height={500} />
+</StyledButton>
+
+
+## 2. Додавання статті  
+- перейти в розділ "Articles"
+- натиснути кнопку "Create"
+
+<StyledButton message="image">
+  <Image src={img3} alt="create article" width={800} height={500} />
+</StyledButton>
+
+- заповнити всі необхідні поля. Обовязкові поля помічени зірочкою `*` . 
+
+<StyledButton message="image">
+  <Image src={img4} alt="article parameters" width={800} height={500} />
+  ---
+  <Image src={img4_2} alt="article filled parameters" width={800} height={500} />
+</StyledButton>
+
+- натиснути кнопку "Create"
+
+## 3. Статуси генерування відео
+- Після успішного генерування відео можна побачити в розділі "Articles" status "video_generation_done"
+<StyledButton message="image">
+  <Image src={img5} alt="video generation done" width={800} height={500} />
+</StyledButton>
+
+
+## 4. Перегляд детальної інформації обробленної сттаті
+- статуси/етапи обробки статті можна подивитись в розділі # 3. Статуси генерування відео  
+- В розділі "Articles" можна побачити кількисть символів у стовпичку "Symbols Count:" та кількисть знайдених картинок у стовпичку "Images In Article Count:"
+<StyledButton message="image">
+  <Image src={img5} alt="video generation done" width={800} height={500} />
+</StyledButton>
+- Можна відкрити статтю для редагування/перегляду натиснувши на ікнонку "олівець" 
+<StyledButton message="image">
+  <Image src={img6} alt="article video details" width={800} height={500} />
+  ---
+  <Image src={img6_2} alt="article video more details" width={800} height={500} />
+</StyledButton>
+
+Більшисть даних доступні тільки для перегляду, наприклад: тут ми можемо подитись згенероване відео або прослухати аудіодоріжки. 
+
+## 5. Редагування , повторний запуск генерації відео
+Також можна поміняти "Template" , після цього необхідно зберегти зміни натиснувши кнопку "Save" внизу сторінки.
+
+При необхості запустити повторну генерацію відео натиснувши кнопку "Process" на формі редагування статті або кнопку "Restart" вікна "Articles". 
+<StyledButton message="image">
+  <Image src={img7} alt="edit article" width={200} height={500} />
+---
+  <Image src={img7_2} alt="restart article" width={800} height={500} />
+</StyledButton>
+

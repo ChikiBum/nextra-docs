@@ -1,0 +1,14 @@
+{
+  "rails": "Rails",
+  "anchorsConfig": "Anchors",
+  "gamlessAnchorsConfig": "Gamless Anchors",
+  "autoInsertConfig": "Auto insert",
+  "parallaxesConfig": "Parallaxes",
+  "sideWallConfig": "Sidewall",
+  "satori": {
+    "display": "hidden"
+  },
+  "satori-copy": {
+    "display": "hidden"
+  }
+}

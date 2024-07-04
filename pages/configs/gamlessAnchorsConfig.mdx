@@ -1,0 +1,39 @@
+import Link from "next/link";
+
+# Gamless anchors config
+
+```js filename="Gamless anchors config example" {15} copy
+<script>
+    window.vpb=window.vpb||{};
+    window.vpb.anchors=
+        [
+            {
+                "unitId":59153,
+                "closeButtonTemplate":2,
+                "containerPadding":4,
+                "closeButtonPosition":"right",
+		        "hideOnScrollBack": true,
+                "ignoreRootPage":true,
+                "scrollValue":100,
+                "withPadding":false,
+                "type":"top",
+                "gam": 0,
+		        "sizeMap":
+                [
+                    [[700],null],
+                    [[468,510],[[320,165],[300,165],[468,60],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                    [[468],[[468,60],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                    [[300,510],[[320,165],[300,165],[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                    [[300],[[320,100],[320,50],[300,100],[300,50],"fluid"]],
+                    [[0],[[300,100],[320,100],"fluid"]]
+                ]
+            }
+        ]
+</script>
+```
+
+When _"gam": 0_ - without GAM
+
+Click <Link href="/description/anchors">`here`</Link> to read about _Anchors_ mapping.
+
+Click <Link href="/description/sizeMap">`here`</Link> to read about _size mapping_.

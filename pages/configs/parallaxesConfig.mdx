@@ -1,0 +1,29 @@
+import Link from "next/link";
+
+# Parallaxes config
+
+```js filename="Parallaxes config example" copy
+<script>
+      window.vpb = {
+        parallaxes: 
+          [
+            {
+                "unitId": 51038,
+                "blockName": "ADVERTISING",
+                "lineStyle": "background-color:transparent; color: black; ",
+                "frameHeight": 250,
+                "frameMode": "adaptive",
+                "frameMaxAdaptations": 2,
+                "sizeMap": [
+                  [[1800],null],[[320],[[300,600]]],
+                  [[300],[[300,100],[300,50]]],
+                  [[0],[[320,100]]]
+                ]
+            }
+        ]
+      };
+    </script>
+
+```
+
+Click <Link href="/Description/parallaxes">`here`</Link> to read about _Parallaxes_.
