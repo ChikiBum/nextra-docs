@@ -1,7 +1,19 @@
 {
-  "anchorsDemo": "Anchors",
+  "anchorsDemo": {
+    "title": "Anchors",
+    "display": "hidden"
+  },
   "autoInsertDemo": "Auto insert",
-  "parallaxesDemo": "Parallaxes",
-  "rails": "Rails",
-  "sideWallDemo": "Sidewall"
+  "parallaxesDemo": {
+    "title": "Parallaxes",
+    "display": "hidden"
+  },
+  "rails": {
+    "title": "Rails",
+    "display": "hidden"
+  },
+  "sideWallDemo": {
+    "title": "Sidewall",
+    "display": "hidden"
+  }
 }

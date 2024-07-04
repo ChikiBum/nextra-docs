@@ -2,8 +2,20 @@
   "anchors": "Anchors",
   "gamplessAnchors": "Anchors (Gamless)",
   "passbackAnchors": "Anchors Passback",
-  "satori-copy": {
+  "parallaxes": {
+    "title": "Parallaxes",
+    "display": "hidden"
+  },
+  "rails": {
+    "title": "Rails",
+    "display": "hidden"
+  },
+  "sideWall": {
+    "title": "SideWall",
+    "display": "hidden"
+  },
+  "autoInsert": {
+    "title": "AutoInsert",
     "display": "hidden"
   }
-
 }
