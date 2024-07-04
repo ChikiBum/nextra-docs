@@ -3,3 +3,4 @@ node_modules
 out/
 pages/description/
 components/fullSreenImage/
+pnpm-lock.yaml
