@@ -1,0 +1,9 @@
+{
+  "anchors": "Anchors",
+  "gamplessAnchors": "Anchors (Gamless)",
+  "passbackAnchors": "Anchors Passback",
+  "satori-copy": {
+    "display": "hidden"
+  }
+
+}

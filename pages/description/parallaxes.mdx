@@ -1,0 +1,29 @@
+import Link from "next/link";
+import Image from "next/image";
+import StyledButton from "../../components/styledButton/styledButton.tsx";
+
+import img4_2 from "../../images/anchors/4_2.jpg";
+
+# Anchors Description
+
+Click <Link href="/about">`here`</Link> to see Demo: "Anchor Bottom" (Sticky\Adhesion Bottom) or "("Anchor Top" (Sticky\Adhesion Top) .
+
+## 1. Adding an anchors block
+
+### 1.1. Adding an anchors block through the admin panel.
+
+<StyledButton message="image">
+  <Image src={img4_2} alt="img4_2" width={800} height={500} />
+</StyledButton>
+
+<StyledButton message="anchors config example">
+
+```js filename="Anchors config example" {3} copy
+[
+  {
+    unitId: 59153123,
+  },
+];
+```
+
+</StyledButton>

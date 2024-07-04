@@ -1,0 +1,67 @@
+import Link from "next/link";
+import Image from "next/image";
+import StyledButton from "../../components/styledButton/styledButton.tsx";
+import anchorsConfig from "../../images/anchors/adm_conf.jpg";
+import enableAnchor from "../../images/anchors/add_manually_1.jpg";
+import img3_1 from "../../images/anchors/3_1.jpg";
+import img3_2 from "../../images/anchors/3_2.jpg";
+import img3_2_1 from "../../images/anchors/3_2_1.jpg";
+import img4_1 from "../../images/anchors/4_1.jpg";
+import img4_2 from "../../images/anchors/4_2.jpg";
+import img7_1 from "../../images/anchors/7_1.jpg";
+import img8_1 from "../../images/anchors/8_1.jpg";
+import img8_2 from "../../images/anchors/8_2.jpg";
+
+# Anchors Description
+
+**Gamless Anchors** - functionality is similar to `Anchors` operates independently of Google (without Google) and allow not use Google Ad Manager (GAM) as the primary ad server for this unit.
+Click <Link href="/Description/anchors">**here**</Link> to read about the `Anchors`.
+
+The functionality was developed as part of task <Link href="https://adtelligent.atlassian.net/browse/HBMP-339"  title="Click to open!">`HBMP-339`</Link> .
+
+### Config example
+
+<StyledButton message="Gamless Anchors config">
+```js filename="Gamless Anchors config" {6, 15} copy
+<script>
+	window.vpb=window.vpb||{};
+	window.vpb.anchors=
+    	[
+    {
+        "dynamicSizing": true,
+        "unitId": 58,
+        "closeButtonTemplate": 2,
+        "closeButtonPosition": "right",
+        "withPadding": true,
+        "ignoreRootPage": false,
+        "scrollValue": 0,
+        "hideOnScrollBack": true,
+        "type": "top",
+        "gam": 0,
+        "sizeMap": [
+          [[700],null],[[468],[[468,60],[320,100],[320,50],[300,100],[300,50]]],
+          [[300],[[320,100],[320,50],[300,100],[300,50]]],
+          [[0],[[320,100]]]
+        ]
+    }
+]
+</script>
+```
+</StyledButton>
+
+Gamless config has two additional prperties:
+
+- `dynamicSizing` values `true` or `false`.
+
+When `dynamicSizing` is set to `true`, it indicates that the advertisement unit is allowed to adjust its size dynamically. This means that the ad unit can resize itself based on the available space or other dynamic conditions such as changes in the viewport size.
+
+- `gam` values `0` or `1`
+
+If `gam = 0` - without google.
+
+If `gam = 1` or miss this property - works without google.
+
+`fluid` size doesn`t work with this type of integration.
+
+Click <Link href="/Description/sizeMap">`here`</Link> to read about size mapping.
+Click <Link href="/Description/anchors">`here`</Link> to read about Anchors or <Link href="/Description/passbackAnchors">`here`</Link> to read about Passback Anchors.

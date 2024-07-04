@@ -1,0 +1,367 @@
+import Link from "next/link";
+import Image from "next/image";
+import StyledButton from "../../components/styledButton/styledButton.tsx";
+import anchorsConfig from "../../images/anchors/adm_conf.jpg";
+import enableAnchor from "../../images/anchors/add_manually_1.jpg";
+import img3_1 from "../../images/anchors/3_1.jpg";
+import img3_2 from "../../images/anchors/3_2.jpg";
+import img3_2_1 from "../../images/anchors/3_2_1.jpg";
+import img4_1 from "../../images/anchors/4_1.jpg";
+import img4_2 from "../../images/anchors/4_2.jpg";
+import img7_1 from "../../images/anchors/7_1.jpg";
+import img8_1 from "../../images/anchors/8_1.jpg";
+import img8_2 from "../../images/anchors/8_2.jpg";
+
+# Anchors Description
+
+**Anchors** - functionality for automatically adding "sticky" advertising blocks to
+the top or bottom of the page, with the position optionally configured in the block's
+settings. Configurations created through the admin panel for anchors are stored in
+vpb.config (vpb.config.anchors).
+
+Click <Link href="/Description/passbackAnchors">`here`</Link> to read about Passback Anchors or <Link href="/Description/gamplessAnchors">`here`</Link> to read about Gamless Anchors.
+
+### Config example
+
+<StyledButton message="Main Anchors config">
+```js filename="Main Anchors config" {6, 13} copy
+<script>
+	window.vpb=window.vpb||{};
+	window.vpb.anchors=
+    	[
+        	{
+            	"unitId":5915312312,
+            	"closeButtonTemplate":2,
+            	"containerPadding":4,
+            	"closeButtonPosition":"right",
+            	"ignoreRootPage":true,
+            	"scrollValue":100,
+            	"withPadding":false,
+            	"type":"top",
+            	"sizeMap":[
+                	[[700],null],
+                	[[468],[[468,60],[320,100],[320,50],[300,100],[300,50]]],
+                	[[300],[[320,100],[320,50],[300,100],[300,50]]],
+                	[[0],[320,100]]]
+        	}
+    	]
+</script>
+```
+</StyledButton>
+
+The functionality was developed as part of feature HP-5599, described in the
+task as follows:
+
+- A block that is rendered at the top of the page when scrolling down (not when the page loads).
+- The close button closes the banner and disables refresh.
+- The close button is 16x16 pixels.
+- Size mappings for both mobile and desktop.
+- Should not cover content like the Google banner.
+- The close button should be within the same container as the banner.
+- Transparency of elements around the banner is not required.
+
+Click <Link href="/about">`here`</Link> to see Demo: "Anchor Bottom" (Sticky\Adhesion Bottom) or "("Anchor Top" (Sticky\Adhesion Top) .
+
+## 1. Adding an anchors block
+
+There are two ways to add an Anchors block to the website:
+
+- Adding the configuration through the admin panel without involving the client.
+- Directly adding it to the page, which involves the client.
+
+### 1.1. Adding an anchors block through the admin panel.
+
+1. Open the admin panel, navigate to HBMP Marketplace -> Site Settings -> select the pencil icon next to the website -> click on the
+2. "Add parameter" button and add the key "anchors"
+
+<StyledButton message="image">
+  <Image src={anchorsConfig} alt="anchors config" width={800} height={500} />
+</StyledButton>
+
+3. Then add its value:
+
+<StyledButton message="anchors config example">
+
+```js filename="Anchors config example" {10} copy
+[
+  {
+    unitId: 59153123,
+    closeButtonTemplate: 2,
+    containerPadding: 4,
+    closeButtonPosition: "right",
+    ignoreRootPage: true,
+    scrollValue: 100,
+    withPadding: false,
+    type: "top",
+    sizeMap: [
+      [[700], null],
+      [
+        [468, 510],
+        [
+          [320, 165],
+          [300, 165],
+          [468, 60],
+          [320, 100],
+          [320, 50],
+          [300, 100],
+          [300, 50],
+          "fluid",
+        ],
+      ],
+      [
+        [468],
+        [[468, 60], [320, 100], [320, 50], [300, 100], [300, 50], "fluid"],
+      ],
+      [
+        [300, 510],
+        [
+          [320, 165],
+          [300, 165],
+          [320, 100],
+          [320, 50],
+          [300, 100],
+          [300, 50],
+          "fluid",
+        ],
+      ],
+      [[300], [[320, 100], [320, 50], [300, 100], [300, 50], "fluid"]],
+      [[0], [[300, 100], [320, 100], "fluid"]],
+    ],
+  },
+];
+```
+
+</StyledButton>
+
+4. Save the changes.
+5. Perform a rebuild.
+
+### 1.2. Adding an anchors block on the page manually.
+
+1. Open the admin panel, navigate to **HBMP Marketplace** -> **Site Settings** -> select the _pencil_ icon next to the website -> click on the **Add parameter** button.
+2. Add the key **enableAnchor** and set its value to 1.
+
+   <StyledButton message="image">
+     <Image
+       src={enableAnchor}
+       alt="enable anchor config"
+       width={800}
+       height={500}
+     />
+   </StyledButton>
+
+3. Save the changes.
+4. Perform a rebuild
+5. Provide script snippet to the client to add to the _`<head></head>`_ section of the page
+
+<StyledButton message="Main Anchors config">
+```js filename="Main Anchors config" {6, 13} copy
+<script>
+	window.vpb=window.vpb||{};
+	window.vpb.anchors=
+    	[
+        	{
+            	"unitId":5915312312,
+            	"closeButtonTemplate":2,
+            	"containerPadding":4,
+            	"closeButtonPosition":"right",
+            	"ignoreRootPage":true,
+            	"scrollValue":100,
+            	"withPadding":false,
+            	"type":"top",
+            	"sizeMap":[
+                	[[700],null],
+                	[[468],[[468,60],[320,100],[320,50],[300,100],[300,50]]],
+                	[[300],[[320,100],[320,50],[300,100],[300,50]]],
+                	[[0],[320,100]]]
+        	}
+    	]
+</script>
+```
+</StyledButton>
+## 2. Description of configuration parameters and logic
+
+After adding the configuration for automatic anchors or enabling the enableAnchor property (with configuration snippet to the page), the script, when executed on the loaded page, retrieves parameters for the anchors block from the vpb.config configuration and operates according to the logic specified in the script.
+
+### 2.1. unitId
+
+**unitId** - Number: Unique identifier of the unit, which can be obtained, for example, in the Member Area, or by inspecting the target site and entering the command vpb.cleanConfig.display in the browser console.
+
+{" "}
+
+<StyledButton message="image">
+  <Image
+    src={img3_1}
+    alt="vpb.cleanConfig.display img"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+
+### 2.2. closeButtonTemplate
+
+**closeButtonTemplate** - String: Style of the close button. During testing, it worked with values 1 and 2; I'm using value 2, which represents a cross symbol.
+
+### 2.3. containerPadding
+
+**containerPadding** - Number: The number of pixels representing the padding from the edge of the container. The default value for containerPadding is 0, indicating no padding.
+
+This example with "containerPadding" value 46. In the screenshots, NP = 46px.
+
+When **type** is set to **top**, the padding is added to the bottom of the container.
+
+{" "}
+
+{" "}
+
+<StyledButton message="image">
+  <Image
+    src={img3_2}
+    alt="anchors padding example img"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+When **type** is set to **bottom**, the padding is added to the top of the container.
+<StyledButton message="image">
+  <Image
+    src={img3_2_1}
+    alt="anchors padding example img"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+
+### 2.4. closeButtonPosition
+
+**closeButtonPosition** - String value: Positioning of the close button for the banner. It can take two values: "right" or "left".
+Example of button placement: **right**.
+
+{" "}
+
+{" "}
+
+<StyledButton message="image">
+  <Image
+    src={img4_1}
+    alt="anchors closeButtonPosition example img"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+Example of button placement: **left**.
+<StyledButton message="image">
+  <Image
+    src={img4_2}
+    alt="anchors closeButtonPosition example img"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+
+### 2.5. ignoreRootPage
+
+**ignoreRootPage** - Boolean field: Determines whether anchors are displayed on the homepage or not. It can take two values:
+
+- _true_ - anchors are NOT displayed on the homepage,
+- _false_ - anchors are displayed on the homepage.
+
+### 2.6. scrollValue
+
+**scrollValue** - Number field: The number of pixels in the viewport after which the anchors block will be displayed upon scrolling.
+For example, with **scrollValue** set to 100, the anchors block will be displayed after the user scrolls down by 100 pixels.
+
+### 2.7. withPadding
+
+**withPadding** - Boolean field: Determines whether the banner will overlap text or not. Can take two values:
+
+- _true_ - the banner does not overlap text,
+- _false_ - the banner overlaps text.
+
+Example: **withPadding**: true.
+
+<StyledButton message="image">
+  <Image
+    src={img7_1}
+    alt="anchors withPadding example img"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+
+### 2.8. type
+
+**type** - anchors position. Can take two values:
+
+- _top_ - вверху страницы
+- _bottom_ - внизу страницы
+
+**Examples**:
+
+- _type: top_
+
+  <StyledButton message="image">
+    <Image
+      src={img8_1}
+      alt="anchors withPadding example img"
+      width={800}
+      height={500}
+    />
+  </StyledButton>
+
+- _type: bottom_
+
+  <StyledButton message="image">
+    <Image
+      src={img8_2}
+      alt="anchors withPadding example img"
+      width={800}
+      height={500}
+    />
+  </StyledButton>
+
+### 2.9. sizeMap
+
+**sizeMap** - Size mapping grid for different screen sizes in the format of Google size mapping.
+
+Click <Link href="/Description/sizeMap">`here`</Link> to read about size mapping.
+
+### 2.10. allowUrlRegexp
+
+**allowUrlRegexp** - String: Regular expression against which the URL of the opened page is checked. Using this option, you can specify in which sections the auto-insert will be activated.
+
+For example:
+
+<StyledButton message="allowUrlRegexp config">
+  ```js filename="allowUrlRegexp example"
+  <script>"allowUrlRegexp":".*/person|box_article|news/.*"</script>
+  ```
+</StyledButton>
+
+This regular expression allows the script to run on pages where the URL contains "person" or "box_article" or "news".
+
+Another example:
+
+<StyledButton message="allowUrlRegexp config">
+  ```js filename="allowUrlRegexp example"
+  <script>
+    "allowUrlRegexp":"^(https?:\\/\\/(?:www\\.)?kino-teatr\\.ua\\/uk\\/[^\"]+)$"
+  </script>
+  ```
+</StyledButton>
+
+This regular expression PREVENTS the script from running on the homepage. The functionality is flexible but requires understanding of regular expressions and thorough testing.
+
+### 2.11. blockUrlRegexp
+
+**blockUrlRegexp** - String: Regular expression against which the URL of the opened page is checked. Using this option, you can specify in which sections the auto-insert will NOT be activated.
+
+For example:
+
+<StyledButton message="blockUrlRegexp config">
+  ```js filename="blockUrlRegexp example"
+  <script>"blockUrlRegexp":".*/person|box_article|news/.*"</script>
+  ```
+</StyledButton>
+
+This regular expression does NOT allow the script to run on pages where the URL contains "person" or "box_article" or "news".

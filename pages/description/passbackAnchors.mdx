@@ -1,0 +1,54 @@
+import Link from "next/link";
+import StyledButton from "../../components/styledButton/styledButton.tsx";
+import anchorsConfig from "../../images/anchors/adm_conf.jpg";
+
+# Passback Anchors Description
+
+**Passback Anchors** - extand functionality of `Anchors` and give us posibility to specify HTML or JavaScript that will be executed if no ads are returned from the primary demand sources. This helps to ensure that the ad space is still utilized effectively.
+Click <Link href="/Description/anchors">**here**</Link> to read about the `Anchors`.
+
+The functionality was developed as part of task <Link href="https://adtelligent.atlassian.net/browse/HBMP-421"  title="Click to open!">`HBMP-421`</Link> .
+
+### Config example
+
+<StyledButton message="Passback Anchors config">
+```js filename="Passback Anchors config" {21-23} copy
+<script>
+	window.vpb=window.vpb||{};
+	window.vpb.anchors=
+    	[
+    {
+        "dynamicSizing": true,
+        "unitId": 58,
+        "closeButtonTemplate": 2,
+        "closeButtonPosition": "right",
+        "withPadding": true,
+        "ignoreRootPage": false,
+        "scrollValue": 0,
+        "hideOnScrollBack": true,
+        "type": "top",
+        "gam": 0,
+        "sizeMap": [
+          [[700],null],[[468],[[468,60],[320,100],[320,50],[300,100],[300,50]]],
+          [[300],[[320,100],[320,50],[300,100],[300,50]]],
+          [[0],[[320,100]]]
+        ],
+        "passback": {
+            "html": "<!-- Composite Start --> <div id=\"M473218ScriptRootC1601438\"></div> <script src=\"https:\/\/jsc.idealmedia.io\/i\/d\/idealmedia.io.1601438.js\" async> <!-- Composite End -->"
+        }
+    }
+]
+</script>
+```
+</StyledButton>
+
+Passback config has one additional property:
+
+- `passback` This is the key part of the configuration for handling unfilled ad requests.
+
+  `html`: Contains the HTML and JavaScript for the passback ad. In this example, the passback code loads an ad from Ideal Media if the primary demand sources do not fill the ad slot.
+
+When we adding string to JSON config we need to use special syntaxis like as escape special characters such as double quotes and backslashes in the HTML content to ensure it is valid JSON.For example The double quotes inside the HTML content are escaped with backslashes: `\"https:\/\/jsc.idealmedia.io\/i\/d\/idealmedia.io.1601438.js\"`.
+
+Click <Link href="/Description/sizeMap">`here`</Link> to read about size mapping.
+Click <Link href="/Description/anchors">`here`</Link> to read about Anchors or <Link href="/Description/gamplessAnchors">`here`</Link> to read about Gamless Anchors.
