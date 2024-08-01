@@ -1,10 +1,6 @@
 {
   "index": "Introduction",
   "demo-one-page": "Formats Demo one page",
-  "demo": "Formats Demo",
-  "--": {
-    "type": "separator"
-  },
   "description": "Display Formats",
   "-": {
     "type": "separator"
