@@ -1,6 +1,7 @@
 {
   "index": "Introduction",
-  "demo-one-page": "Formats Demo one page",
+  "siteconfig": "Client Site Setup",
+  "demo-one-page": "Formats Demo page",
   "description": "Display Formats",
   "-": {
     "type": "separator"
@@ -9,7 +10,7 @@
   "-": {
     "type": "separator"
   },
-  "configs": "Configs Examples",
+  "configExamples": "Configs Examples",
   "about": {
     "title": "About",
     "type": "page"

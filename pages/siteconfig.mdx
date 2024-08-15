@@ -1,0 +1,160 @@
+import Link from "next/link";
+import StyledButton from "../components/styledButton/styledButton.tsx";
+import Image from "next/image";
+import img1 from "../images/siteSettings/1.jpg";
+import img2 from "../images/siteSettings/2.jpg";
+import img3 from "../images/siteSettings/3.jpg";
+import img4 from "../images/siteSettings/4.jpg";
+
+# Base site config structure
+
+Typically, a site config is an object (JSON contain object) with a set of properties and their values
+
+
+<StyledButton message="base config example">
+  <Image
+    src={img1}
+    alt="base config example"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+
+### Base config example
+
+```js filename="Base config stucture" {1, 42, 43} 
+{
+    "lastLiUpdatedAt": 1678880308127,
+    "liToSkipRefresh": [],
+    "DFPHBCreativeIds": [
+        12312312,
+        22312312,
+        32312312
+    ],
+    "anchors": [
+        {
+            "closeButtonTemplate": 2,
+            "containerPadding": 4,
+            "unitId": 585701,
+            "closeButtonPosition": "right",
+            "ignoreRootPage": true,
+            "scrollValue": 100,
+            "withPadding": true,
+            "type": "top",
+            "hideOnScrollBack": true,
+            "sizeMap": [
+                [
+                    [
+                        700
+                    ],
+                    null
+                ],
+                [
+                    [
+                        300
+                    ],
+                    [
+                        [
+                            320,
+                            100
+                        ]
+                    ]
+                ]
+            ]
+        }
+    ],
+    "allow1x1": 1,
+    "adxEnhance": 1.1
+}
+```
+
+In this structure, we see open ```{``` and close ```}``` symbols, along with properties and their values. For example, the property `adxEnhance` has the value `1.1`
+
+
+
+## Quick Guide: Adding Base Configuration to Client Site
+
+In general, when we want to add a new configuration parameter, we need to add a new `property` and its corresponding `value`. 
+to do this do next steps:
+1. Open the admin panel, navigate to `HBMP Marketplace -> Site Settings -> select the pencil icon next to the website
+2. Click on the "Add parameter" ->  add the `property` ->  add the `value`
+
+It’s important to note that the `property` is always a string, but the `value` can be an array, object, string, etc.
+
+<StyledButton message="add config example">
+  <Image
+    src={img2}
+    alt="add config example"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+
+For example we want to add `anchors` config 
+
+```js filename="anchor config example" {2} 
+{
+    "anchors": [
+        {
+            "closeButtonTemplate": 2,
+            "containerPadding": 4,
+            "unitId": 585701,
+            "closeButtonPosition": "right",
+            "ignoreRootPage": true,
+            "scrollValue": 100,
+            "withPadding": true,
+            "type": "top",
+            "hideOnScrollBack": true,
+            "sizeMap": [
+                [
+                    [
+                        700
+                    ],
+                    null
+                ],
+                [
+                    [
+                        300
+                    ],
+                    [
+                        [
+                            320,
+                            100
+                        ]
+                    ]
+                ]
+            ]
+        }
+    ]
+}
+```
+
+We see `anchors` as the property name and an array as the `value`, with objects containing configuration parameters inside. To add this configuration:
+
+<StyledButton message="add anchor config">
+  <Image
+    src={img3}
+    alt="add config example"
+    width={800}
+    height={500}
+  />
+</StyledButton>
+
+or we need to add `allow1x1` parameter  
+
+```js filename="Base config stucture" {1, 42, 43} 
+{
+    "allow1x1": 1
+}
+```
+
+We see `allow1x1` as the property name and an `1` as the `value`. To add this configuration:
+
+<StyledButton message="add allow1x1 config ">
+  <Image
+    src={img4}
+    alt="add config example"
+    width={800}
+    height={500}
+  />
+</StyledButton>

@@ -5,6 +5,7 @@
   "autoInsertConfig": "Auto insert",
   "parallaxesConfig": "Parallaxes",
   "sideWallConfig": "Sidewall",
+  "offerwall": "Offerwall",
   "satori": {
     "display": "hidden"
   },
