@@ -4,13 +4,13 @@ import StyledButton from "../../components/styledButton/styledButton.tsx";
 
 import img4_2 from "../../images/anchors/4_2.jpg";
 
-# Anchors Description
+# Autoinsert Description
 
-Click <Link href="/about">`here`</Link> to see Demo: "Anchor Bottom" (Sticky\Adhesion Bottom) or "("Anchor Top" (Sticky\Adhesion Top) .
+Click <Link href="/about">`here`</Link> to see Demo.
 
-## 1. Adding an anchors block
+## 1. Adding an Autoinsert block
 
-### 1.1. Adding an anchors block through the admin panel.
+### 1.1. Adding an Autoinsert block through the admin panel.
 
 <StyledButton message="image">
   <Image src={img4_2} alt="img4_2" width={800} height={500} />
@@ -100,3 +100,17 @@ Click <Link href="/about">`here`</Link> to see Demo: "Anchor Bottom" (Sticky\Adh
 ```
 
 </StyledButton>
+
+
+## 4. Autoinsert issues 
+
+### 4.1. Not block as selector
+By default autoinsert works only with "block" html element, line as div, aside, article, section etc 
+in my case article was wrapped to span element and selector was  "selector": "body .post-body>div>span" and autoinsert not add ad to the selected block
+
+for this case we need to add target block to the "insertAllowSelectorsList" config property 
+"insertAllowSelectorsList": "body, header, main, aside, footer, article, section, div, ol, ul, p, span",
+
+
+
+task https://adtelligent.atlassian.net/browse/HB-622
